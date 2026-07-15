@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Rodrigo Braz - Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Rodrigo Braz, game programmer. Unity (C#) and Unreal Engine 5 (C++/Blueprints). Gameplay systems, multiplayer networking, and a 2D engine built from scratch. Three-time game jam winner." name="description">
+  <meta content="game programmer, gameplay programmer, Unity, Unreal Engine, C++, C#, Portugal" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -23,6 +23,28 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Page additions (scoped, on top of template) -->
+  <style>
+    /* portfolio card: image + hover overlay inside .portfolio-media, caption always visible below */
+    .portfolio .portfolio-content {
+      display: flex; flex-direction: column;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px; overflow: hidden;
+    }
+    .portfolio .portfolio-media { position: relative; overflow: hidden; }
+    .portfolio .portfolio-media img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    /* template positions .portfolio-info absolutely with inset:0; inside .portfolio-media it now covers exactly the image */
+    .portfolio .portfolio-caption { padding: 14px 16px 18px; }
+    .portfolio .portfolio-caption h4 { font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 4px; }
+    .portfolio .portfolio-caption .tagline { display: block; font-size: 13px; font-weight: 600; color: var(--accent-color); margin-bottom: 6px; }
+    .portfolio .portfolio-caption .tasks { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.75); margin: 0; }
+
+    /* skills groups (template scopes resume-item styles to .resume, so these need their own) */
+    .skills .skill-group { margin-bottom: 26px; }
+    .skills .skill-group h4 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .skills .skill-group p { color: rgba(255,255,255,0.75); margin: 0; line-height: 1.6; }
+  </style>
 
 </head>
 
@@ -66,7 +88,12 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Rodrigo Braz</h2>
-        <p>I'm a <span class="typed" data-typed-items="Game Developer, Freelancer, Coffe Lover">Game Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>I'm a <span class="typed" data-typed-items="Game Programmer, Unity Developer (C#), Unreal Engine Developer (C++), Systems Programmer">Game Programmer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p class="mt-3">Three-time game jam winner. I build gameplay, multiplayer and engine-level systems.</p>
+        <p class="mt-4">
+          <a href="#portfolio" class="btn btn-outline-light me-2">See my work</a>
+          <a href="assets/Rodrigo_Braz_CV_Game_Programmer.pdf" class="btn btn-outline-light">Download CV</a>
+        </p>
       </div>
 
     </section><!-- /Hero Section -->
@@ -84,28 +111,31 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-15 content">
-            <h2>Game Developer</h2>
+            <h2>Game Programmer</h2>
             <p class="fst-italic py-3">
-              Passionate about code, games, and a good cup of coffee.
+              I build the systems that make games work: gameplay, multiplayer, tools and engines.
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>19 May 2003</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+351 968011416</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Caldas da Rainha, Portugal</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Focus:</strong> <span>Gameplay and systems programming</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Engines:</strong> <span>Unity, Unreal Engine 5</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Languages:</strong> <span>C#, C++</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Undergraduate In Games and Multimedia</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Caldas da Rainha, Portugal</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Studying:</strong> <span>Master's in Digital Games Development</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>rodrigobraz.dev@gmail.com</span></li>
                 </ul>
               </div>
             </div>
             <p class="py-3">
-              I’m a 22 year old game developer who loves programming and creating fun and engaging experiences. I’m passionate about video games, both as a player and a developer. I enjoy challenges and I’m a competitive person who is always trying to improve. Coffee is a big part of my daily routine as it helps me stay focused and creative while working on my projects.
+              I have shipped features on published mobile titles at a 20-person studio, written a 2D engine from
+              scratch in C++ and OpenGL, and built multiplayer networking, matchmaking, scoring and rhythm systems
+              across eleven projects. I am a competitive game jammer with three first-place finishes, and I am
+              currently completing a Master's degree in Digital Games Development at the Polytechnic of Leiria.
             </p>
           </div>
         </div>
@@ -115,7 +145,7 @@
     </section><!-- /About Section -->
 
     <!-- Stats Section -->
-    <!--<section id="stats" class="stats section">
+    <section id="stats" class="stats section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -123,41 +153,41 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+              <i class="bi bi-trophy"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>First-place finishes</strong> <span>in 48-hour game jams</span></p>
             </div>
-          </div> End Stats Item -->
+          </div><!-- End Stats Item -->
 
-          <!--<div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
+              <i class="bi bi-controller"></i>
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Games and systems built</strong> <span>from jams to a custom engine</span></p>
             </div>
-          </div> End Stats Item -->
+          </div><!-- End Stats Item -->
 
-          <!--<div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
+              <i class="bi bi-phone"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Published mobile titles</strong> <span>contributed to at Volt Games</span></p>
             </div>
-          </div> End Stats Item -->
+          </div><!-- End Stats Item -->
 
-          <!--<div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+              <i class="bi bi-stopwatch"></i>
+              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Game jams</strong> <span>48 hours each, since 2021</span></p>
             </div>
-          </div> End Stats Item -->
+          </div><!-- End Stats Item -->
 
-        <!--</div>
+        </div>
 
       </div>
 
-    </section>  /Stats Section -->
+    </section><!-- /Stats Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section dark-background">
@@ -170,57 +200,28 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row skills-content skills-animation">
+        <div class="row gy-4">
 
           <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>C#</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>C++</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Java</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar " role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-
+            <div class="skill-group">
+              <h4>Engines</h4>
+              <p>Unity (C#) &middot; Unreal Engine 5 (C++ and Blueprints)</p>
+            </div>
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <p>C# &middot; C++ &middot; familiar with Java and Python</p>
+            </div>
           </div>
 
           <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Unity</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            
-            <div class="progress">
-              <span class="skill"><span>Unreal Engine</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->  
-
-            <div class="progress">
-              <span class="skill"><span>Python</span></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
+            <div class="skill-group">
+              <h4>Systems I have built</h4>
+              <p>Multiplayer networking and matchmaking &middot; scoring and win/lose logic &middot; reward and progression systems &middot; rhythm mechanics &middot; dialogue and inventory systems &middot; procedural placement tooling &middot; shaders</p>
+            </div>
+            <div class="skill-group">
+              <h4>Engine-level work</h4>
+              <p>2D engine from scratch in C++ and OpenGL: rendering, game loop, entity handling, gamepad input</p>
+            </div>
           </div>
 
         </div>
@@ -243,16 +244,19 @@
         <div class="row">
 
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
+            <h3 class="resume-title">Summary</h3>
 
             <div class="resume-item pb-0">
               <h4>Rodrigo Braz</h4>
-              <p><em>Game Programmer with strong profciency in C# and C++, experienced in developing projects using Unity and Unreal Engine. Involved in both individual and collaborative game development, including participation in multiple Game Jams and industry related events. Demonstrated ability to work effectively both independently and within a team, drawing on leadership and collaboration skills also developed through involvement in scouting.</em></p>
+              <p><em>Game programmer proficient in C# and C++, experienced in Unity and Unreal Engine. I have worked on individual and team projects, from published mobile titles to game jams and a custom engine. Comfortable working independently or in a team, with leadership and collaboration skills also built through years of scouting.</em></p>
               <ul>
                 <li>Caldas da Rainha, Leiria, Portugal</li>
-                <li>(351) 968011416</li>
                 <li>rodrigobraz.dev@gmail.com</li>
               </ul>
+              <p class="mt-3">
+                <a href="assets/Rodrigo_Braz_CV_Game_Programmer.pdf" class="btn btn-sm btn-outline-dark me-2">CV &middot; Game Programmer</a>
+                <a href="assets/Rodrigo_Braz_CV_Software_Developer.pdf" class="btn btn-sm btn-outline-dark">CV &middot; Software Developer</a>
+              </p>
             </div><!-- Edn Resume Item -->
 
             <h3 class="resume-title">Education</h3>
@@ -284,7 +288,7 @@
               <h4>Game Programmer Intern</h4>
               <h5>2024 - 2024</h5>
               <p><em>Volt Games, Remote, Lisbon, Portugal</em></p>
-              <p>Worked as an intern using Unity Engine and as a Mobile Game Programmer, where I was assign into variuos projects to make some new mechanics and bug fixes. Also worked on some games that are published on AppStore such as "Golf Stars", "Sand Match" and "Hex em Up!". I learned a lot about the game industry and how to work in a team with a lot of people. Personaly I learned a lot of programming skills that the time I arrived I didn't knew them and nowdays I use them all the time!</p>
+              <p>Developed gameplay features and fixes across four Unity mobile titles at a 20-person studio, three of them published on the App Store: "Golf Stars", "Sand Match" and "Hex em Up!". Built matchmaking, scoring and win/lose logic for a basketball game prototype, a timed chest reward system, and a 3D physics puzzle prototype. Fixed bugs and improved load times across concurrent projects.</p>
             </div><!-- Edn Resume Item -->
             
             <h3 class="resume-title">Academic Experience</h3>
@@ -292,14 +296,14 @@
               <h4>Game Programmer</h4>
               <h5>2023 - 2023</h5>
               <p><em>Edgy Press Studios, Leiria, Portugal</em></p>
-              <p>Worked on a game called "Achroma Awakening" as a 3D Game Programmer, where I was responsible for the whole game experience. It was a Project made using Unreal Engine for a subject called "3D Project" in 2nd year of the course in "Games and Multimedia", it was groups of 3 students and we had under 6 months to create a 3D Game.</p>
+              <p>Sole programmer on "Achroma Awakening", a 3D puzzle game built in Unreal Engine by a 3-person team in under 6 months, for the 3D Project course of my Bachelor's degree. I wrote everything that runs: character movement, puzzle mechanics, dialogue system, cutscenes, shaders and UI.</p>
             </div><!-- Edn Resume Item -->
 
             <div class="resume-item">
               <h4>Game Programmer</h4>
               <h5>2022 - 2023</h5>
               <p><em>Twinkle Frog Studios, Leiria, Portugal</em></p>
-              <p>Worked on a game called "Entrudo" as a Game Programmer, where I was responsible for the whole game experience. It was a Project made using Unity as the Engine for a subject called "2D Project" in the 1st year of course in "Games and Multimedia", it was groups of 3 students and we had under 6 months to create a 2D Game.</p>
+              <p>Sole programmer on "Entrudo", a 2D game about Portuguese Carnival traditions, built in Unity by a 3-person team in under 6 months for the 2D Project course. I built the rhythm mechanics, NPCs, dialogue and inventory systems, plus procedural object placement tooling to speed up level building.</p>
             </div><!-- Edn Resume Item -->
           </div>
 
@@ -330,139 +334,192 @@
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-academicProjects">
               <div class="portfolio-content h-100">
-                <img src="assets/img/bangeye.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Bangeye Drumfight</h4>
-                  <p>1st Place at Game Journeys 2025 - 48h Game Jam</p>
-                  <a href="assets/img/bangeye.png" title="Developed Tasks: Local Multiplayer, Rythm Mechanics, In Game UI System, Curse System and each curse behaviour, Some VFX's for background and for curse bar" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://bigoddstudios.itch.io/bangeyedrumfight" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <div class="portfolio-media">
+                  <img src="assets/img/achroma.png" class="img-fluid" alt="Achroma Awakening screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/achroma.png" title="Achroma Awakening" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://edgypress-studio.itch.io/achroma-awakening" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
                 </div>
-              </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/bubblenaught.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Bubblenaut</h4>
-                  <p>1st Place at Global Game Jam Leiria 2025 - 48h Game Jam</p>
-                  <a href="assets/img/bubblenaught.png" title="Developed Tasks: Character Movement, All Character Mechanics, In Game UI system, Bubble Mechanics" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://bigoddstudios.itch.io/bubblenaut" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/floosfrenzy.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Fool's Frenzy</h4>
-                  <p>4th Place at Global Game Jam Leiria 2024 - 48h Game Jam</p>
-                  <a href="assets/img/floosfrenzy.png" title="Developed Tasks: All Character Mechanics, Juggle Mechanic, Playing Instrument Mechanic, Items Dropping, In Game UI System, King behanviour, Some VFX's" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://edgypress-studio.itch.io/fools-frenzy" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/bestbad.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Best Bad Football Manager</h4>
-                  <p>A game made to participate in MAD GAME JAM 2023 - 48h Game Jam</p>
-                  <a href="assets/img/bestbad.png" title="Developed Tasks: UI System, Card System, Mana System" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://rodrigobraz.itch.io/best-bad-football-manager" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/twober.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>TwoBer</h4>
-                  <p>1st Palce at Leiria Game Jam 2022 - 48h Game Jam</p>
-                  <a href="assets/img/twober.png" title="Developed Tasks: Character Movement, All Character Mechanics, In Game UI system, Map building, Wave Management, Local Multilayer" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://v3.globalgamejam.org/2023/games/twober-2" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-jams">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/klinwood.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Klinwood</h4>
-                  <p>My first Game jam, took 10th place at MAD GAME JAM 2021 - 48h Game Jam</p>
-                  <a href="assets/img/klinwood.png" title="Developed Tasks: Character Movement, All Character Mechanics, In Game UI system, Map building" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://rodrigobraz.itch.io/klinwood" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-academicProjects">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/achroma.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
+                <div class="portfolio-caption">
                   <h4>Achroma Awakening</h4>
-                  <p>A game made for 3D Game Project Subject at University</p>
-                  <a href="assets/img/achroma.png" title="Developed Tasks: Character Movement, Puzzle Mechanics, UI System, Map Building, Dialogue System, Water and Visual shaders, Cutscenes" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://edgypress-studio.itch.io/achroma-awakening" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <span class="tagline">Unreal Engine (C++ + Blueprints) &middot; sole programmer</span>
+                  <p class="tasks">Built: character movement, puzzle mechanics, dialogue system, cutscenes, water and visual shaders, UI</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-academicProjects">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
               <div class="portfolio-content h-100">
-                <img src="assets/img/entrudo.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
+                <div class="portfolio-media">
+                  <img src="assets/img/bangeye.png" class="img-fluid" alt="Bangeye Drumfight screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/bangeye.png" title="Bangeye Drumfight" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://bigoddstudios.itch.io/bangeyedrumfight" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Bangeye Drumfight</h4>
+                  <span class="tagline">1st Place &middot; Game Journeys 2025 &middot; 48h &middot; Unity</span>
+                  <p class="tasks">Built: local multiplayer, rhythm mechanics, curse system with per-curse behaviour, in-game UI, VFX</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/bubblenaught.png" class="img-fluid" alt="Bubblenaut screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/bubblenaught.png" title="Bubblenaut" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://bigoddstudios.itch.io/bubblenaut" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Bubblenaut</h4>
+                  <span class="tagline">1st Place &middot; GGJ Leiria 2025 &middot; 48h &middot; Unity</span>
+                  <p class="tasks">Built: character movement, all character mechanics, bubble mechanics, in-game UI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-academicProjects">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/entrudo.png" class="img-fluid" alt="Entrudo screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/entrudo.png" title="Entrudo" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://twinkle-frog-studios.itch.io/entrudo" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
                   <h4>Entrudo</h4>
-                  <p>A game made for 2D Game Project Subject at University</p>
-                  <a href="assets/img/entrudo.png" title="Developed Tasks: Character Movement, Rythm Mechanics, UI System, NPC's, Map Building, Dialogue System, Backpack System, Some procedural object placement to speed up map building" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://twinkle-frog-studios.itch.io/entrudo" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <span class="tagline">Unity (C#) &middot; sole programmer</span>
+                  <p class="tasks">Built: rhythm mechanics, NPCs, dialogue and inventory systems, procedural object placement tooling</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-academicProjects">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-academicProjects">
               <div class="portfolio-content h-100">
-                <img src="assets/img/Engine.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Evenout Game Engine</h4>
-                  <p>This game engine was made for Advanced Game Programming Subject at University.</p>
-                  <a href="assets/img/Engine.png" title="The goal was to create a game engine that could make any 2D Game the game we had to make was a clone of Xenon2000" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://github.com/zenDevEleven/EvenOut-Engine-With-OpenGL" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <div class="portfolio-media">
+                  <img src="assets/img/Engine.png" class="img-fluid" alt="EvenOut Engine screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/Engine.png" title="EvenOut Engine" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/zenDevEleven/EvenOut-Engine-With-OpenGL" target="_blank" title="Source on GitHub" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>EvenOut Engine</h4>
+                  <span class="tagline">C++ &middot; OpenGL &middot; engine from scratch</span>
+                  <p class="tasks">Built: rendering, game loop, entity handling, gamepad input, plus a Xenon 2000 style demo game</p>
                 </div>
               </div>
             </div>
 
-              <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-personalProjects">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-personalProjects">
               <div class="portfolio-content h-100">
-                <img src="assets/img/hero.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Hero Ball's</h4>
-                  <p>A game made for Anpri a platform for online learning while covid at HighSchool</p>
-                  <a href="assets/img/hero.png" title="Developed Tasks: Game Design puzzle building, Ball Mechanics, UI System, 2D Art" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://rodrigobraz.itch.io/hero-balls" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <div class="portfolio-media">
+                  <img src="assets/img/climbup.png" class="img-fluid" alt="Climb Up screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/climbup.png" title="Climb Up" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://rodrigobraz.itch.io/climb-up" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-personalProjects">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/climbup.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
+                <div class="portfolio-caption">
                   <h4>Climb Up</h4>
-                  <p>A game made for PAP to finish my High School Course - Grade 20</p>
-                  <a href="assets/img/climbup.png" title="Developed Tasks: Network Framework, Character Mechanics for each character, UI System, Matchmaking, Server Hosting, Server List, Game Design, Character Design, 2D Art" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://rodrigobraz.itch.io/climb-up" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <span class="tagline">Unity (C#) &middot; online multiplayer</span>
+                  <p class="tasks">Built: network framework, matchmaking, server hosting, server browser, character mechanics, UI</p>
                 </div>
               </div>
             </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/twober.png" class="img-fluid" alt="TwoBer screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/twober.png" title="TwoBer" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://v3.globalgamejam.org/2023/games/twober-2" target="_blank" title="More details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>TwoBer</h4>
+                  <span class="tagline">1st Place &middot; Leiria Game Jam 2022 &middot; 48h &middot; Unity</span>
+                  <p class="tasks">Built: local multiplayer, wave management, character mechanics, map building, in-game UI</p>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/floosfrenzy.png" class="img-fluid" alt="Fool's Frenzy screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/floosfrenzy.png" title="Fool's Frenzy" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://edgypress-studio.itch.io/fools-frenzy" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Fool's Frenzy</h4>
+                  <span class="tagline">4th Place &middot; GGJ Leiria 2024 &middot; 48h &middot; Unity</span>
+                  <p class="tasks">Built: character mechanics, juggling and instrument mechanics, item drops, king behaviour, UI, VFX</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/bestbad.png" class="img-fluid" alt="Best Bad Football Manager screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/bestbad.png" title="Best Bad Football Manager" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://rodrigobraz.itch.io/best-bad-football-manager" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Best Bad Football Manager</h4>
+                  <span class="tagline">MAD Game Jam 2023 &middot; 48h &middot; Unity</span>
+                  <p class="tasks">Built: card system, mana system, UI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-jams">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/klinwood.png" class="img-fluid" alt="Klinwood screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/klinwood.png" title="Klinwood" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://rodrigobraz.itch.io/klinwood" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Klinwood</h4>
+                  <span class="tagline">My first jam &middot; MAD Game Jam 2021 &middot; Unity</span>
+                  <p class="tasks">Built: character movement, character mechanics, map building, in-game UI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-personalProjects">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-media">
+                  <img src="assets/img/hero.png" class="img-fluid" alt="Hero Ball's screenshot">
+                  <div class="portfolio-info">
+                    <a href="assets/img/hero.png" title="Hero Ball's" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://rodrigobraz.itch.io/hero-balls" target="_blank" title="Play on itch.io" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Hero Ball's</h4>
+                  <span class="tagline">Unity &middot; made for the Anpri learning platform</span>
+                  <p class="tasks">Built: puzzle design, ball mechanics, UI, 2D art</p>
+                </div>
+              </div>
+            </div>
 
           </div><!-- End Portfolio Container -->
 
@@ -478,7 +535,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Feel free to reach out for collaborations, questions, or just to say hello.</p>
+        <p>Open to game programmer and software developer roles, in Portugal or remote.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -494,10 +551,10 @@
               </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
+                <i class="bi bi-globe flex-shrink-0"></i>
                 <div>
-                  <h3>Call Me</h3>
-                  <p>+351 968011416</p>
+                  <h3>Find Me</h3>
+                  <p><a href="https://github.com/Braz11">GitHub</a> &middot; <a href="https://www.linkedin.com/in/rodrigo-braz-7ab42522a/">LinkedIn</a> &middot; <a href="https://rodrigobraz.itch.io">itch.io</a></p>
                 </div>
               </div><!-- End Info Item -->
 
